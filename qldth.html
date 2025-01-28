@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gà Rán Take Away Chickzy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* General styling */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      /* Header */
+      header {
+        background-color: #ff7f50;
+        color: white;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      header .logo {
+        display: flex;
+        align-items: center;
+      }
+      header .logo img {
+        height: 60px;
+        margin-right: 15px;
+      }
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        margin-left: 25px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+      nav ul li a:hover {
+        color: #ffcc00;
+        transform: translateY(-3px);
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 100px 20px;
+        background-color: #ffe8b2;
+        border-bottom: 5px solid #ffcc00;
+        position: relative;
+      }
+      .hero h2 {
+        color: #ff6600;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+      .hero .btn {
+        display: inline-block;
+        padding: 15px 40px;
+        background-color: #ff6600;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        max-width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+      .hero .btn:hover {
+        background-color: #cc5200;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Product Introduction Section */
+      .product-intro {
+        padding: 60px 20px;
+        background-color: #fff4e1;
+        border-radius: 8px;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+      .product-intro h3 {
+        font-size: 2.5rem;
+        color: #ff6600;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .product-intro p {
+        font-size: 1.2rem;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+
+      /* Menu Section */
+      .products {
+        padding: 60px 20px;
+      }
+      .products h2 {
+        text-align: center;
+        color: #ff6600;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+      .product-item {
+        text-align: center;
+        border: 1px solid #ffcc66;
+        padding: 25px;
+        border-radius: 8px;
+        background-color: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .product-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      }
+      .product-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+      .product-item h3 {
+        color: #ff6600;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      .product-item p {
+        font-size: 1.2rem;
+        color: #444;
+        margin-bottom: 20px;
+      }
+      .product-item .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #ff6600;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .product-item .btn:hover {
+        background-color: #cc5200;
+        transform: translateY(-3px);
+      }
+
+      /* Footer */
+      footer {
+        background-color: #ff7f50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+      footer p {
+        font-size: 1rem;
+        margin: 5px 0;
+      }
+
+      /* Hero Image Adjustments */
+      .hero .hero-image {
+        max-width: 90%;
+        height: 600px;
+        border-radius: 15px;
+        margin-top: 30px;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+      }
+      .hero .hero-image:hover {
+        transform: scale(1.05);
+      }
+
+      /* Container for Layout */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/b295d43a-db42-431c-9cd9-ffc155bb5d65.jpg"
+            alt="Logo Gà Rán Take Away Chickzy"
+          />
+          <h1>Gà Rán Take Away Chickzy</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li><a href="#cart"><i class="fas fa-shopping-cart"></i> Đặt hàng</a></li>
+            <li><a href="#login">Đăng nhập / Đăng ký</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h2>Chào mừng đến với Gà Rán Take Away Chickzy</h2>
+        <p>Thưởng thức gà rán thơm ngon, giòn tan!</p>
+        <img
+          src="img/z6269496946929_5b9c2da88495f4e20ac75469545f7371.jpg"
+          alt="Gà rán Chickzy"
+          class="hero-image"
+        />
+        <a href="#about" class="btn">Giới thiệu sản phẩm</a>
+      </div>
+    </section>
+
+    <!-- Product Introduction Section -->
+    <section id="about" class="product-intro">
+      <div class="container">
+        <h3>Giới thiệu sản phẩm</h3>
+        <p>Chào mừng bạn đến với các món gà rán của chúng tôi. Tất cả các món ăn được chế biến từ nguyên liệu tươi ngon nhất, đảm bảo chất lượng và hương vị tuyệt vời. Hãy thưởng thức các món ăn tại Chickzy!</p>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="products">
+      <div class="container">
+        <h2>Menu</h2>
+        <div class="product-grid">
+          <div class="product-item">
+            <img
+              src="img/z6269497335085_8c80118df8a9bec039d0d11580f09329.jpg"
+              alt="Gà giòn"
+            />
+            <h3>Gà Giòn Giòn</h3>
+            <p>28,000 VNĐ</p>
+            <a href="#" class="btn">Thêm vào giỏ hàng</a>
+          </div>
+          <div class="product-item">
+            <img
+              src="img/z6269497834510_58a56b098eb3c0a274f59fcd43524707.jpg"
+              alt="Gà phô mai"
+            />
+            <h3>Gà Phô Mai</h3>
+            <p>45,000 VNĐ</p>
+            <a href="#" class="btn">Thêm vào giỏ hàng</a>
+          </div>
+          <div class="product-item">
+            <img
+              src="img/z6269498314085_ad41060f72e2cf0d85092039a7ebeff0.jpg"
+              alt="Cánh gà chiên sốt mật ong"
+            />
+            <h3>Đùi Gà CHICKY</h3>
+            <p>23,000 VNĐ</p>
+            <a href="#" class="btn">Thêm vào giỏ hàng</a>
+          </div>
+          <div class="product-item">
+            <img
+              src="img/z6269499031357_a12523fbdf44fc438aaab2a026748b78.jpg"
+              alt="Cánh Teen Teen"
+            />
+            <h3>Cánh Teen Teen</h3>
+            <p>23,000 VNĐ</p>
+            <a href="#" class="btn">Thêm vào giỏ hàng</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <p>&copy; Hotline đặt hàng:  0914.912.995</p>
+        <p>Địa chỉ: 1146 Đoàn Nguyễn Tuấn Tân Quý Tây Huyện Bình Chánh TP.HCM</p>
+        <p>Hỗ trợ khách hàng: 0375.79.37.87</p>
+      </div>
+    </footer>
+  </body>
+</html>
